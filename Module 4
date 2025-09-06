@@ -1,30 +1,31 @@
 #Module 4
 #1
-for n in range(3, 1001, 3):
-    print(n)
-2
-inches = float(input("Enter inches (negative to stop): "))
-while inches >= 0:
-    cm = inches * 2.54
-    print(str(inches) + " inches = " + str(round(cm, 2)) + " centimeters")
-    inches = float(input("Enter inches (negative to stop): "))
-    print("Program ended.")
+#for n in range(3, 1001, 3):
+   # print(n)
+#2
+# inches = float(input("Enter inches (negative to stop): "))
+# while inches >= 0:
+#     cm = inches * 2.54
+#     print(str(inches) + " inches = " + str(round(cm, 2)) + " centimeters")
+#     inches = float(input("Enter inches (negative to stop): "))
+#
+# print("Program ended.")
 #3
-smallest = None
-largest = None
-number = input("Enter a number (empty to stop): ")
-while number != "":
-    number = float(number)
-    if smallest is None or number < smallest:
-        smallest = number
-    if largest is None or number > largest:
-        largest = number
-        number = input("Enter a number (empty to stop): ")
-if smallest is None:
-    print("No numbers entered.")
-else:
-    print("Smallest: " + str(smallest))
-    print("Largest: " + str(largest))
+# smallest = None
+# largest = None
+# number = input("Enter a number (empty to stop): ")
+# while number != "":
+#     number = float(number)
+#     if smallest is None or number < smallest:
+#         smallest = number
+#     if largest is None or number > largest:
+#         largest = number
+#         number = input("Enter a number (empty to stop): ")
+# if smallest is None:
+#     print("No numbers entered.")
+# else:
+#     print("Smallest: " + str(smallest))
+#     print("Largest: " + str(largest))
 #4
 # import random
 # secret = random.randint(1, 10)
