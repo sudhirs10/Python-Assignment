@@ -3,13 +3,13 @@
 #for n in range(3, 1001, 3):
    # print(n)
 #2
-# inches = float(input("Enter inches (negative to stop): "))
-# while inches >= 0:
-#     cm = inches * 2.54
-#     print(str(inches) + " inches = " + str(round(cm, 2)) + " centimeters")
-#     inches = float(input("Enter inches (negative to stop): "))
-#
-# print("Program ended.")
+# inches = float(input("Enter inches: "))
+# while inches>0:
+#     cm=inches * 2.54
+#     print(cm)
+#     inches=float(input("Enter inches: "))
+#     if inches<0:
+#         break
 #3
 # smallest = None
 # largest = None
@@ -67,4 +67,5 @@
 # pi = 4.0 * inside_circle / N
 # print("Number of points generated:", N)
 # print("Points inside circle:", inside_circle)
+
 # print("Approximation of pi:", pi)
