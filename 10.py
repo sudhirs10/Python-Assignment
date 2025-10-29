@@ -171,7 +171,7 @@ class Race:
         self.cars = cars
     def hour_passes(self):
         for car in self.cars:
-            change = random.randint(-10, 15)   # keep exactly as in the question
+            change = random.randint(-10, 15)  
             car.accelerate(change)
             car.drive(1)
     def print_status(self):
@@ -206,5 +206,6 @@ while race.race_finished() == False:
 print("Race has finished after", hours, "hours.")
 race.print_status()
 print("The event", race.name, "has now ended. Thank you!")
+
 
 
