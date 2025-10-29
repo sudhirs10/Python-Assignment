@@ -64,8 +64,7 @@ print("Total Travelled distance:", my_car.travelled_distance, "km")
 # make 10 cars and starts a race
 # speed changes every hour
 # race ends when one car reaches 10000 km
-# Car Race Program
-# This program creates 10 cars and makes them race until one travels 10,000 km
+# program creates 10 cars and makes them race until one travels 10,000 km
 
 import random
 
@@ -108,6 +107,7 @@ print("Car details:")
 print("Registration Number", "----MaxSpeed", "----CurrentSpeed", "----Distance")
 for car in cars:
     print(car.registration_number, car.max_speed, car.current_speed, car.travelled_distance)
+
 
 
 
