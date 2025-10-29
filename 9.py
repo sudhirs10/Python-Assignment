@@ -64,9 +64,11 @@ print("Total Travelled distance:", my_car.travelled_distance, "km")
 # make 10 cars and starts a race
 # speed changes every hour
 # race ends when one car reaches 10000 km
-# shows all cars and the winner
+# Car Race Program
+# This program creates 10 cars and makes them race until one travels 10,000 km
 
 import random
+
 class Car:
     def __init__(self, registration_number, max_speed):
         self.registration_number = registration_number
@@ -89,25 +91,23 @@ for i in range(1, 11):
     cars.append(car)
 race_over = False
 hours = 0
-winner = None
-print("The race has started")
-while not race_over:
+print("The race has started!")
+while race_over == False:
     hours = hours + 1
     for car in cars:
         change = random.randint(-10, 15)
         car.accelerate(change)
-        car.drive(1)
+        time = 1
+        car.drive(time)
         if car.travelled_distance >= 10000:
             race_over = True
-            winner = car
             break
 print()
-print("Race finished in", hours, "hours.")
-print("Registration", "MaxSpeed", "CurrentSpeed", "Distance")
+print("Race finished after", hours, "hours.")
+print("Car details:")
+print("Registration Number", "----MaxSpeed", "----CurrentSpeed", "----Distance")
 for car in cars:
-    print(car.registration_number, car.max_speed, car.current_speed, round(car.travelled_distance, 1))
-print()
-print("The winner is", winner.registration_number, "with", round(winner.travelled_distance, 1), "km!")
-print("Race over, congratulations to the winner!")
+    print(car.registration_number, car.max_speed, car.current_speed, car.travelled_distance)
+
 
 
