@@ -148,69 +148,6 @@
 # Each car has a registration number, max speed, current speed, and travelled distance
 # Cars change speed randomly and move every hour
 # The race ends when one of the cars reaches 8000 km
-import random
-
-class Car:
-    def __init__(self, registration_number, max_speed):
-        self.registration_number = registration_number
-        self.max_speed = max_speed
-        self.current_speed = 0
-        self.travelled_distance = 0
-    def accelerate(self, change):
-        self.current_speed = self.current_speed + change
-        if self.current_speed > self.max_speed:
-            self.current_speed = self.max_speed
-        if self.current_speed < 0:
-            self.current_speed = 0
-    def drive(self, hours):
-        self.travelled_distance = self.travelled_distance + self.current_speed * hours
-class Race:
-    def __init__(self, name, distance_km, cars):
-        self.name = name
-        self.distance_km = distance_km
-        self.cars = cars
-    def hour_passes(self):
-        for car in self.cars:
-            change = random.randint(-10, 15)
-            car.accelerate(change)
-            car.drive(1)
-    def print_status(self):
-        print("---- Current race situation ----")
-        print("Details of all cars:")
-        for car in self.cars:
-            print("Car", car.registration_number, "has travelled", int(car.travelled_distance), "kilometers and moving at", car.current_speed, "km/h.")
-        print("End of status update.\n")
-    def race_finished(self):
-        finished = False
-        for car in self.cars:
-            if car.travelled_distance >= self.distance_km:
-                finished = True
-        return finished
-cars = []
-for i in range(1, 11):
-    max_speed = random.randint(100, 200)
-    reg = "ABC-" + str(i)
-    car = Car(reg, max_speed)
-    cars.append(car)
-race = Race("Grand Demolition Derby", 8000, cars)
-print("A new race called", race.name, "has started with a distance of", race.distance_km, "kilometers.")
-hours = 0
-while race.race_finished() == False:
-    hours = hours + 1
-    race.hour_passes()
-    if hours % 10 == 0:
-        print("After", hours, "hours of racing, this is the current situation:")
-        race.print_status()
-print("Race has finished after", hours, "hours.")
-race.print_status()
-print("The event", race.name, "has now ended. Thank you!")
-
-
-
-# Car Race with faster progress (still 8000 km)
-# Changes to make it finish sooner:
-# 1) Cars start with some speed (60..120 km/h)
-# 2) Per-hour speed change is a bit larger (-5..+25 instead of -10..+15)
 
 import random
 class Car:
@@ -269,4 +206,5 @@ while race.race_finished() == False:
 print("Race has finished after", hours, "hours.")
 race.print_status()
 print("The event", race.name, "has now ended. Thank you!")
+
 
